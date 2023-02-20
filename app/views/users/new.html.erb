@@ -1,0 +1,57 @@
+<%#<form action="<%= users_path %> <%#" method="post" accept-charset="utf-8">
+<%# <div>
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" id="">
+</div>
+
+<div>
+  <label for="email">E-mail</label>
+  <input type="email" name="user[email]" id="">
+</div>
+
+<div>
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" id="">
+</div>
+
+<input type="submit" value="Submit">
+</form> %>
+
+<%# <%= form_tag(users_path, method: "post") do %>
+  <%# <div>
+    <%= label_tag(:username, "Username") %>
+    <%# <%= text_field_tag(:username) %>
+  <%# </div>
+
+  <div>
+    <%= label_tag(:email, "E-mail") %>
+    <%# <%= email_field_tag(:email) %>
+  <%# </div>
+
+  <div>
+    <%= label_tag(:password, "Password") %>
+    <%# <%= password_field_tag(:password) %>
+  <%# </div>
+
+  <%# <%= submit_tag("Submit") %>
+
+<%# <% end %> 
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :username, "Username" %>
+    <%= form.text_field :username, placeholder: "Your username here"%>
+  </div>
+
+  <div>
+    <%= form.label :email, "E-mail" %>
+    <%= form.email_field :email, placeholder: "example@example.com" %>
+  </div>
+
+  <div>
+    <%= form.label :password, "Password" %>
+    <%= form.password_field :password %>
+  </div>
+
+  <%= form.submit :Submit %>
+<% end %>
